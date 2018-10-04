@@ -7,7 +7,6 @@ import time
 from progressbar import *
 from lxml import etree
 from threading import Thread
-import tkinter as tk
 
 print('This software is for those who dig high-resolution wallpapers. By inputing the keyword and pages you wanna download, breathtaking(or pantsdropping LOL) pictures will be automatically downloaded to your computer. It will be located in your C:\WallPaper. Do enjoy! \n')
 print('这个软件是为那些喜欢高像素壁纸的人服务的。通过输入关键词和想下载的页数，你就能将大量的高质量图片下到你的电脑中。默认存储地点是C盘下的 WallPaper 文件夹。')
@@ -67,19 +66,16 @@ else:
     keyWord1 = keyWord
     
 class Spider():
-    #初始化参数
     def __init__(self):        
-        self.headers = {#headers是请求头，"User-Agent"、"Accept"等字段可通过谷歌Chrome浏览器查找！
+        self.headers = {
         "User-Agent": "Mozilla/5.0(WindowsNT6.1;rv:2.0.1)Gecko/20100101Firefox/4.0.1",
         }
-        self.proxies = {#代理ip，当网站限制ip访问时，需要切换访问ip
+        self.proxies = {
 		"http": "http://61.178.238.122:63000",
 	    }
-        #filePath是自定义的，本次程序运行后创建的文件夹路径，存放各种需要下载的对象。
-        self.filePath = ('C:\WallPaper\\'+ keyWord + "\\" )
+        self.filePath = ('C:\WallPaper\\'+ keyWord + "\\" ) # Here to change the location
 
     def creat_File(self):
-        #新建本地的文件夹路径，用于存储网页、图片等数据！
         filePath = self.filePath
         if not os.path.exists(filePath):
             os.makedirs(filePath)
@@ -98,7 +94,6 @@ class Spider():
         return totalPagenum
 
     def main_fuction(self):
-        #count是总图片数，times是想下载的页面数
         self.creat_File()
         count = self.get_pageNum()
         print("We have found:{} images!".format(count))
@@ -131,7 +126,6 @@ class Spider():
         end = time.time()
 
     def getLinks(self,number):
-        #此函数可以获取给定numvber的页面中所有图片的链接，用List形式返回
         url = ("https://alpha.wallhaven.cc/search?q={}&categories=111&purity=100&sorting=relevance&order=desc&page={}").format(keyWord1,number)
         try:
             html = requests.get(url,headers = self.headers,proxies = self.proxies)
@@ -142,8 +136,6 @@ class Spider():
         return pic_Linklist
 
     def download(self,url,count):
-        #此函数用于图片下载。其中参数url是形如：https://alpha.wallhaven.cc/wallpaper/616442/thumbTags的网址
-        #616442是图片编号，我们需要用strip()得到此编号，然后构造html，html是图片的最终直接下载网址。
         string = url.strip('/thumbTags').strip('https://alpha.wallhaven.cc/wallpaper/')
         html = 'http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-' + string + '.jpg'
         pic_path = (self.filePath + keyWord + str(count) + '.jpg' )
