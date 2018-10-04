@@ -73,8 +73,8 @@ class Spider():
         self.proxies = {
 		"http": "http://61.178.238.122:63000",
 	    }
-        self.filePath = ('C:\WallPaper\\'+ keyWord + "\\" ) # Here to change the location
-
+        self.filePath = ('C:\WallPaper\\'+ keyWord + "\\" ) # Here to change the location(Windows Edition)
+        self.filePath = ('./'+ keyWord + "/" ) # Here to change the location(Mac Edition)
     def creat_File(self):
         filePath = self.filePath
         if not os.path.exists(filePath):
