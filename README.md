@@ -9,6 +9,7 @@
 
 ## How to use:
  1. Download the WPSpyder.py
+ 2. Open WPSpyder.py, delete line 76 if you are running on Mac (or delete line 77 if you are running of Windows)
  2. Run script
  3. Enjoy!
    ```
