@@ -9,9 +9,12 @@ Do enjoy!
  1. Download the WPSpyder.py
  2. Run script
  3. Enjoy!
- 
+   ```
+  $ python3 WPSpyder.py
+  ```
 ## Command line:
  -h : get help
+ 
  -t : get sample tags
 
 ## Dependencies:
