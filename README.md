@@ -12,7 +12,7 @@
  2. Run script
  3. Enjoy!
    ```
-  $ python WPSpyder.py
+  $ python3 WPSpyder.py
   ```
 ## Command line:
  -h : get help
@@ -23,6 +23,6 @@
   This project depends on os, requests, time, progressbar, lxml, threading, tkinter.
   Your can install install the dependencies using the requirements.txt file and running
   ```
-  $ pip install -r requirements.txt
+  $ pip3 install -r requirements.txt
   ```
   
