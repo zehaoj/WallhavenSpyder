@@ -1,6 +1,3 @@
 lxml==4.2.4
 requests==2.19.1
-progressbar
-time
-os
-threading
+progressbar==2.5
