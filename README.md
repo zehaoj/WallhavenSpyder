@@ -9,11 +9,10 @@
 
 ## How to use:
  1. Download the WPSpyder.py
- 2. Open WPSpyder.py, delete line 76 if you are running on Mac (or delete line 77 if you are running of Windows)
  2. Run script
  3. Enjoy!
    ```
-  $ python3 WPSpyder.py
+  $ python WPSpyder.py
   ```
 ## Command line:
  -h : get help
@@ -24,6 +23,6 @@
   This project depends on os, requests, time, progressbar, lxml, threading, tkinter.
   Your can install install the dependencies using the requirements.txt file and running
   ```
-  $ pip3 install -r requirements.txt
+  $ pip install -r requirements.txt
   ```
   
