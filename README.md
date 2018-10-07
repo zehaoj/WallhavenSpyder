@@ -8,12 +8,19 @@
  Do enjoy!
 
 ## How to use:
+If you are familier with python:
  1. Download the WPSpyder.py
  2. Run script
  3. Enjoy!
    ```
   $ python3 WPSpyder.py
   ```
+  
+If you are not:
+1. run WPSpyder.exe
+2. enjoy!
+(only run on Win10)
+
 ## Command line:
  -h : get help
  
